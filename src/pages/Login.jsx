@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Login = () => {
   return (
-    <div>
-      <div>
+    <div className='min-h-screen flex justify-center items-center'>
+      <div className=''>
         <h2>Welcome Back!</h2>
         <form action="">
           <div>
