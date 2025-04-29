@@ -5,10 +5,10 @@ const Login = () => {
   return (
     <div className='min-h-screen flex justify-center items-center'>
       <div className=''>
-        <h2>Welcome Back!</h2>
+        <h2 className='text-3xl text-bold'>Welcome Back!</h2>
         <form action="">
           <div>
-            <label htmlFor="">Email</label>
+            <label htmlFor="" className='text-bold'>Email</label>
             <input type="text" />
           </div>
           <div>
