@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 @import "tailwindcss";
+
+
+.primary{
+    background-color: #bfbfbf;
+}
+
+
+.border-gray{
+    border-color: #808080;
+}
+
+.bg-gray{
+    background: #808080;
+}

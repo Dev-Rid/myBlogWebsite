@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Dashboard = () => {
   return (
-    <div className='min-h-screen flex justify-start items-center border-2 pt-2 '>
+    <div className='primary min-h-screen flex justify-start items-center border-2 pt-2 '>
       <div className='flex flex-row '>
         {/* sidebar */}
         <div className='m8 border-r-2 border-gray-400 w-38 h-90 ml-2 '>
