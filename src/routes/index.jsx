@@ -8,6 +8,7 @@ import Login from "../pages/Login"
 import Homepage from "../pages/Home"
 import Home from "../pages"
 import NotFound from "../pages/NotFound"
+import PostDetails from "../pages/PostDetails"
 
 const route = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const route = createBrowserRouter([
             {
                 path: "/register",
                 element: <Signup/>
+            },
+            {
+                path: "/postdetails",
+                element: <PostDetails/>
             }
         ],
  
