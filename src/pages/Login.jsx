@@ -17,9 +17,9 @@ const Login = () => {
               <input type="text" placeholder='Password' className='border-3 px-[0.5rem] py-[0.5rem] w-[21.42rem] rounded-[0.3rem] border-gray items-start'/>
             </div>
 
-            <button className='border-2 px-[8rem] py-[0.5rem] rounded-[0.3rem] border-gray-400 bg-gray items-center text-white text-bold text-2xl'>
+            <Link to="/dashboard" className='border-2 px-[8rem] py-[0.5rem] rounded-[0.3rem] border-gray-400 bg-gray bg-gray items-center text-white text-bold text-2xl'>
               Login
-            </button>
+            </Link>
             <div>
               <p className='text-center text-gray-600'>Forgot password?</p>
             </div>
