@@ -23,7 +23,9 @@ const Signup = () => {
                         <input type="text" placeholder='Confirm Password' className='border-3 px-[0.5rem] py[0.5rem] w-[21.42rem] h-[2.4rem] rounded-[0.3rem] border-gray'/>
                     </div>
                     <div className='border-2 px-[8rem] py-[0.5rem] rounded-[0.3rem] border-gray-400 bg-gray items-center text-white textbold text-2xl'>
-                        <button>Sign up</button>
+                        <Link to="/login" classame='border-2 px-[8rem] py-[0.5rem] rounded-[0.3rem] border-gray-400 bg-gray bg-gray items-center text-white text-bold text-2xl'>
+                            Sign Up
+                        </Link>
                     </div>
                     <div>
                         <p className='text-center text-gray-600'>Already have an account? <br /> <Link to="/login" className='underline'>Login</Link></p>
