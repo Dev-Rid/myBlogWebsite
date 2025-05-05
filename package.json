@@ -12,6 +12,8 @@
     "build-css": "@tailwindcss/cli -i styles.css -o styles.css"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.5",
+    "@fontsource/open-sans": "^5.2.5",
     "@tailwindcss/postcss": "^4.1.4",
     "lucide-react": "^0.507.0",
     "react": "^19.0.0",
@@ -29,7 +31,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.4",
+    "tailwindcss": "^4.1.5",
     "vite": "^6.3.1"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",

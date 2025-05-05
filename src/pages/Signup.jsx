@@ -10,24 +10,24 @@ const Signup = () => {
             </div>
             <div className=' mt-5'>
                 <form action="" className='mb-20 gap-4 flex flex-col'>
-                    <div className='w-full justify-center flex'>   
-                        <input type="text" placeholder='Full Name' className='border-3 px-[0.5rem] w-full max-w-[16.5rem] md:max-w-[21.42rem] h-[2.4rem] rounded-[0.3rem] border-gray'/>
+                    <div className='w-full justify-center flex container'>   
+                        <input type="text" placeholder='Full Name' className='border-3 px-[0.5rem]  md:w-[23rem] sm:w-[21rem] w-[16rem] h-[2.4rem] rounded-[0.3rem] border-gray'/>
                     </div>
-                    <div className='justify-center items-center flex'>
-                        {/* <input type="text" placeholder='Email' className='border-3 px-[0.5rem] h-[2.4rem] w-full max-w-[16.5rem] md:max-w-[21.42rem] rounded-[0.3rem] border-gray'/> */}
+                    <div className='w-full justify-center flex container'>
+                        <input type="text" placeholder='Email' className='border-3 px-[0.5rem] h-[2.4rem] md:w-[23rem] sm:w-[21rem] w-[16rem] rounded-[0.3rem] border-gray'/>
                     </div>
-                    <div className='justify-center items-center flex'>
-                        {/* <input type="text" placeholder='Password' className='border-3 px-[0.5rem] w-full max-w-[16.5rem] md:max-w-[21.42rem] h-[2.4rem] rounded-[0.3rem] border-gray'/> */}
+                    <div className='w-full justify-center flex container'>
+                        <input type="text" placeholder='Password' className='border-3 px-[0.5rem] md:w-[23rem] sm:w-[21rem] w-[16rem] h-[2.4rem] rounded-[0.3rem] border-gray'/>
                     </div>
-                    <div className='justify-center items-center flex'>
-                        {/* <input type="text" placeholder='Confirm Password' className='border-3 px-[0.5rem] w-full max-w-[16.5rem] md:max-w-[21.42rem] h-[2.4rem] rounded-[0.3rem] border-gray'/> */}
+                    <div className='w-full justify-center flex container'>
+                        <input type="text" placeholder='Confirm Password' className='border-3 px-[0.5rem] md:w-[23rem] sm:w-[21rem] w-[16rem] h-[2.4rem] rounded-[0.3rem] border-gray'/>
                     </div>
 
-                    {/* <div className='border-2 px-[8rem] py-[0.5rem] rounded-[0.3rem] border-gray-400 bg-gray items-center text-white textbold text-2xl'> */}
-                        {/* <Link to="/login" classame='border-2 px-[8rem] md:py-[0.5rem] rounded-[0.3rem] border-gray-400 bg-gray bg-gray items-center text-white text-bold text-2xl'>
+                    <div className='font border-2 px-[5rem] py-[0.5rem] rounded-[0.3rem] border-gray-400 bg-gray items-center text-white textbold text-2xl'>
+                        <Link to="/login" classame=''>
                             Sign Up
-                        </Link> */}
-                    {/* </div> */}
+                        </Link>
+                    </div>
                     <div>
                         <p className='text-center text-gray-600'>Already have an account? <br /> <Link to="/login" className='underline'>Login</Link></p>
                     </div>

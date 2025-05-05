@@ -40,7 +40,7 @@ const Navbar = () => {
 
           {/* Left: Blog Title */}
           <div className='ml-2 lg:ml-4'>
-            <h2 className='text-lg md:text-2xl font-bold'>My Blog</h2>
+            <h2 className='myBlogLogo text-lg md:text-2xl font-bold'>My Blog</h2>
           </div>
 
           {/* Right: Links and Hamburger */}
