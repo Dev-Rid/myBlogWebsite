@@ -1,116 +1,241 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
 
-const Dashboard = () => {
+// Simple icon components (you can replace with your preferred icon library)
+const SearchIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+  </svg>
+);
+
+const MoreHorizontalIcon = () => (
+  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h.01M12 12h.01M19 12h.01" />
+  </svg>
+);
+
+const NetworkIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+  </svg>
+);
+
+// Dropdown Menu Component
+const DropdownMenu = ({ children, trigger }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className='primary min-h-screen flex justify-start items-center border-2 pt-2 '>
-      <div className='flex flex-row '>
-        {/* sidebar */}
-        <div className='m8 border-r-2 border-gray-400 w-38 h-90 ml-2 '>
-          <div > 
-            <h1>Dashboard</h1>
+    <div className="relative">
+      <div onClick={() => setIsOpen(!isOpen)}>
+        {trigger}
+      </div>
+      {isOpen && (
+        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10">
+          <div className="py-1" onClick={() => setIsOpen(false)}>
+            {children}
           </div>
-          <div className='mt-8 border-t-2 border-b-2 bg-gray-50 py-2 px-10'>Logo</div>
-          <div className='flex flex-col gap-5 mt-5'>
-            <Link>Create New Post</Link>
-            <Link>Manage Posts</Link>  
-            <Link>Categories</Link>  
-            <Link>Comments</Link>  
-            <Link>Analytics</Link>  
-            <Link>Settings</Link>  
-          </div>  
         </div>
+      )}
+    </div>
+  );
+};
 
-        {/* main body */}
-        <div className="dashboard-container">
-          <div className="dashboard-card">
-            
-            <div>
-              <div>
-                <input type="text" />
-              </div>
-              <div>
-                <button></button>
-              </div>
-            </div>
+const DropdownMenuItem = ({ children, onClick }) => (
+  <div 
+    className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+    onClick={onClick}
+  >
+    {children}
+  </div>
+);
 
-            {/* overview */}
-            <div>
-              <div>
-                <h2>Overview</h2>
-              </div>
-              <div>
-                <div>
-                  <Link>Total Posts</Link>
-                </div>
-                <div>
-                  <Link>Total Comments</Link>
-                </div>
-                <div>
-                  <Link>Drafts</Link>
-                </div>
-                <div>
-                  <Link>Views</Link>
-                </div>
-              </div>
+export default function Dashboard() {
+  return (
+    <div className="flex h-screen bg-gray-50">
+      {/* Sidebar */}
+      <div className="w-64 primary border-r border-gray-200">
+        <div className="p-6">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 border-2 border-gray-300 rounded-lg flex items-center justify-center">
+              <NetworkIcon />
             </div>
-            
+            <span className="textColor  text-xl font-semibold ">Dashboard</span>
           </div>
-       
+
+          <nav className="space-y-2">
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Logo</div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Create New Post</div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Manage Posts</div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Categories</div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Comments</div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Analytics</div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Settings</div>
+          </nav>
         </div>
+      </div>
 
-        <div>
-          <div>
-            <h2>Recent Posts</h2>
-          </div>
-
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Author</th>
-                  <th>Date</th>
-                  <th>Status</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>Post 1</td>
-                  <td>Author 1</td>
-                  <td>Date 1</td>
-                  <td>Status 1</td>
-                </tr>
-              
-                <tr>
-                  <td>Post 2</td>
-                  <td>Author 2</td>
-                  <td>Date 2</td>
-                  <td>Status 2</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div>
-            <div>
-              <h2>Recent Comments</h2>
+      {/* Main Content */}
+      <div className="flex-1 primaryTwo overflow-auto">
+        <div className="p-8">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex-1 max-w-2xl">
+              <div className="relative">
+                <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                  <SearchIcon />
+                </div>
+                <input 
+                  type="text"
+                  placeholder="Search" 
+                  className="inputBackground w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-full h-12 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
             </div>
+            <div className="w-12 h-12 ml-4 bg-gray-200 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
+            </div>
+          </div>
 
-            <div>
-              <table>
-                
+          {/* Overview Section */}
+          <div className="mb-8">
+            <h1 className="textColor text-2xl font-semibold text-gray-900 mb-6">Overview</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="inputBackground border border-gray-200 rounded-lg p-6">
+                <h3 className="text-lg font-medium text-gray-900">Total Posts</h3>
+              </div>
+              <div className="inputBackground border border-gray-200 rounded-lg p-6">
+                <h3 className="text-lg font-medium text-gray-900">Total Comments</h3>
+              </div>
+              <div className="inputBackground border border-gray-200 rounded-lg p-6">
+                <h3 className="text-lg font-medium text-gray-900">Drafts</h3>
+              </div>
+              <div className="inputBackground border border-gray-200 rounded-lg p-6">
+                <h3 className="text-lg font-medium text-gray-900">Views</h3>
+              </div>
+            </div>
+          </div>
+
+          {/* Recent Posts Section */}
+          <div className="mb-8">
+            <h2 className="textColor text-xl font-semibold mb-4">Recent Posts</h2>
+            <div className="inputBackground border border-gray-200 rounded-lg overflow-hidden">
+              <table className="w-full">
+                <thead>
+                  <tr className="inputBackground border-b border-gray-200 bg-gray-50">
+                    <th className="text-left py-3 px-6 text-gray-900 font-medium">Title</th>
+                    <th className="text-left py-3 px-6 text-gray-900 font-medium">Status</th>
+                    <th className="text-left py-3 px-6 text-gray-900 font-medium">Date</th>
+                    <th className="text-left py-3 px-6 text-gray-900 font-medium">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-4 px-6">
+                      <div className="h-4 bg-gray-200 rounded animate-pulse w-48"></div>
+                    </td>
+                    <td className="py-4 px-6">
+                      <div className="h-4 bg-gray-200 rounded animate-pulse w-20"></div>
+                    </td>
+                    <td className="py-4 px-6">
+                      <div className="h-4 bg-gray-200 rounded animate-pulse w-24"></div>
+                    </td>
+                    <td className="py-4 px-6">
+                      <DropdownMenu
+                        trigger={
+                          <button className="p-2 hover:bg-gray-100 rounded">
+                            <MoreHorizontalIcon />
+                          </button>
+                        }
+                      >
+                        <DropdownMenuItem onClick={() => console.log('Edit')}>
+                          Edit
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => console.log('Delete')}>
+                          Delete
+                        </DropdownMenuItem>
+                      </DropdownMenu>
+                    </td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-4 px-6">
+                      <div className="h-4 bg-gray-200 rounded animate-pulse w-56"></div>
+                    </td>
+                    <td className="py-4 px-6">
+                      <div className="h-4 bg-gray-200 rounded animate-pulse w-20"></div>
+                    </td>
+                    <td className="py-4 px-6">
+                      <div className="h-4 bg-gray-200 rounded animate-pulse w-24"></div>
+                    </td>
+                    <td className="py-4 px-6">
+                      <DropdownMenu
+                        trigger={
+                          <button className="p-2 hover:bg-gray-100 rounded">
+                            <MoreHorizontalIcon />
+                          </button>
+                        }
+                      >
+                        <DropdownMenuItem onClick={() => console.log('Edit')}>
+                          Edit
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => console.log('Delete')}>
+                          Delete
+                        </DropdownMenuItem>
+                      </DropdownMenu>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-6">
+                      <div className="h-4 bg-gray-200 rounded animate-pulse w-64"></div>
+                    </td>
+                    <td className="py-4 px-6">
+                      <div className="h-4 bg-gray-200 rounded animate-pulse w-20"></div>
+                    </td>
+                    <td className="py-4 px-6">
+                      <div className="h-4 bg-gray-200 rounded animate-pulse w-24"></div>
+                    </td>
+                    <td className="py-4 px-6">
+                      <DropdownMenu
+                        trigger={
+                          <button className="p-2 hover:bg-gray-100 rounded">
+                            <MoreHorizontalIcon />
+                          </button>
+                        }
+                      >
+                        <DropdownMenuItem onClick={() => console.log('Edit')}>
+                          Edit
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => console.log('Delete')}>
+                          Delete
+                        </DropdownMenuItem>
+                      </DropdownMenu>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
-
           </div>
 
+          {/* Recent Comments Section */}
+          <div className=''>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">Recent Comments</h2>
+            <div className="inputBackground border border-gray-200 rounded-lg p-6">
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <div className="h-4 bg-gray-200 rounded animate-pulse w-3/4"></div>
+                  <div className="h-3 bg-gray-200 rounded animate-pulse w-1/2"></div>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-4 bg-gray-200 rounded animate-pulse w-2/3"></div>
+                  <div className="h-3 bg-gray-200 rounded animate-pulse w-1/3"></div>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-4 bg-gray-200 rounded animate-pulse w-4/5"></div>
+                  <div className="h-3 bg-gray-200 rounded animate-pulse w-2/5"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-export default Dashboard

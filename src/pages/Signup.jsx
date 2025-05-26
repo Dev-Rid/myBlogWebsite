@@ -6,20 +6,20 @@ const Signup = () => {
     <div className='primary min-h-screen flex justify-center items-center border-2 pt-12'>
         <div className=''>
             <div className=''>
-                <h2 className='text-xl md:text-2xl text-bold text-center text-gray-600'>Create An Account</h2>
+                <h2 className='textColor text-xl md:text-2xl text-bold text-center text-gray-600'>Create An Account</h2>
             </div>
             <div className=' mt-5'>
                 <form action="" className='mb-20 gap-4 flex flex-col'>
-                    <div className='w-full justify-center flex container'>   
-                        <input type="text" placeholder='Full Name' className='border-3 px-[0.5rem]  md:w-[23rem] sm:w-[21rem] w-[16rem] h-[2.4rem] rounded-[0.3rem] border-gray'/>
+                    <div className='w-full justify-center flex containe'>   
+                        <input type="text" placeholder='Full Name' className='primaryTwo border-3 px-[0.5rem]  md:w-[23rem] sm:w-[21rem] w-[16rem] h-[2.4rem] rounded-[0.3rem] border-gray'/>
                     </div>
-                    <div className='w-full justify-center flex container'>
+                    <div className='w-full justify-center flex containe'>
                         <input type="text" placeholder='Email' className='border-3 px-[0.5rem] h-[2.4rem] md:w-[23rem] sm:w-[21rem] w-[16rem] rounded-[0.3rem] border-gray'/>
                     </div>
-                    <div className='w-full justify-center flex container'>
+                    <div className='w-full justify-center flex containe'>
                         <input type="text" placeholder='Password' className='border-3 px-[0.5rem] md:w-[23rem] sm:w-[21rem] w-[16rem] h-[2.4rem] rounded-[0.3rem] border-gray'/>
                     </div>
-                    <div className='w-full justify-center flex container'>
+                    <div className='w-full justify-center flex containe'>
                         <input type="text" placeholder='Confirm Password' className='border-3 px-[0.5rem] md:w-[23rem] sm:w-[21rem] w-[16rem] h-[2.4rem] rounded-[0.3rem] border-gray'/>
                     </div>
 

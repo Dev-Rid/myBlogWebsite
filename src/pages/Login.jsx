@@ -6,7 +6,7 @@ const Login = () => {
     <div className='primary min-h-screen flex justify-center items-center border-2 pt-10 '>
       <div className=''>
         <div>
-          <h2 className='text-3xl text-bold text-center text-gray-600'>Welcome Back!</h2>
+          <h2 className='textColor text-3xl text-bold text-center text-gray-600'>Welcome Back!</h2>
         </div>
         <div>
           <form action=""className='mb-20 mt-10 gap-4 flex flex-col'>

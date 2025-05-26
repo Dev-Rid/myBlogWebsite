@@ -5,7 +5,21 @@
 
 
 .primary{
-    background-color: #bfbfbf;
+    /* background-color: #bfbfbf; */
+    background-color: #1C2451;
+}
+
+.primaryTwo{
+    /* background-color: #bfbfbf7e; */
+    background-color: #1C2451;
+}
+
+.inputBackground{
+    background-color: #606685;
+}
+
+.textColor{
+    color: #F0F0F3;
 }
 
 
