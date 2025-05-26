@@ -153,9 +153,14 @@ export default function LoginForm() {
         <div className="text-center mt-8">
           <p className="text-gray-600 text-lg">
             Don't have an account?{' '}
+              <Link 
+                to="/dashboard" 
+                onClick={handleSignUpClick}
+                className="text-gray-700 hover:text-gray-900 font-medium underline focus:outline-none"
+              >Login
+              </Link>
+
             <button
-              onClick={handleSignUpClick}
-              className="text-gray-700 hover:text-gray-900 font-medium underline focus:outline-none"
             >
               Sign up
             </button>
