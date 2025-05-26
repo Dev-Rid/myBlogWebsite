@@ -54,6 +54,7 @@
 
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 export default function LoginForm() {
   const [formData, setFormData] = useState({
@@ -86,8 +87,8 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl border-2 border-gray-300 p-8 w-full max-w-md shadow-sm">
+    <div className="min-h-screen primary flex items-center justify-center p-4">
+      <div className="primary rounded-2xl border-2 border-gray-300 p-8 w-full max-w-md shadow-sm">
         {/* Logo Placeholder */}
         <div className="flex justify-center mb-8">
           <div className="bg-gray-400 rounded-lg px-8 py-4 text-gray-700 font-medium text-lg">
@@ -96,7 +97,7 @@ export default function LoginForm() {
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-300 text-center mb-8">
           Welcome Back
         </h1>
 
@@ -110,7 +111,7 @@ export default function LoginForm() {
               placeholder="Email"
               value={formData.email}
               onChange={handleInputChange}
-              className="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-gray-700 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-lg"
+              className="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-gray-300 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-lg"
               required
             />
           </div>
@@ -123,47 +124,43 @@ export default function LoginForm() {
               placeholder="Password"
               value={formData.password}
               onChange={handleInputChange}
-              className="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-gray-700 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-lg"
+              className="w-full px-4 py-4 border-2 border-gray-300 rounded-xl text-gray-300 placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-lg"
               required
             />
           </div>
 
           {/* Login Button */}
           <div className="pt-4">
-            <button
-              type="submit"
-              className="w-full bg-gray-600 hover:bg-gray-700 text-white font-medium py-4 px-4 rounded-xl text-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+            < Link
+               to="/dashboard"
+              className="block w-full text-center bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-2xl text-lg shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-purple-300"  
             >
               Login
-            </button>
+            </  Link>
           </div>
         </form>
 
         {/* Forgot Password Link */}
         <div className="text-center mt-6">
-          <button
+          <Link
+            to="/dashboard"
             onClick={handleForgotPassword}
-            className="text-gray-600 hover:text-gray-800 text-lg underline focus:outline-none"
+            className="text-blue-700 hover:text-blue-800 text-lg underline focus:outline-none"
           >
             Forgot password?
-          </button>
+          </Link>
         </div>
 
         {/* Sign Up Link */}
         <div className="text-center mt-8">
-          <p className="text-gray-600 text-lg">
+          <p className="text-lg textColor">
             Don't have an account?{' '}
-              <Link 
-                to="/dashboard" 
+              <Link
+                to="/register" 
                 onClick={handleSignUpClick}
                 className="text-gray-700 hover:text-gray-900 font-medium underline focus:outline-none"
-              >Login
+              > <span className='text-blue-700 underline active:text-blue-800'>Sign Up</span>
               </Link>
-
-            <button
-            >
-              Sign up
-            </button>
           </p>
         </div>
       </div>
