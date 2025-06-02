@@ -55,7 +55,7 @@ export default function Dashboard() {
       <div className="w-64 primary border-r border-gray-200">
         <div className="p-6">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 border-2 border-gray-300 rounded-lg flex items-center justify-center">
+            <div className="w-10 text-gray-300 h-10 border-2 border-gray-300 rounded-lg flex items-center justify-center">
               <NetworkIcon />
             </div>
             <span className="textColor  text-xl font-semibold ">Dashboard</span>
@@ -97,34 +97,34 @@ export default function Dashboard() {
 
           {/* Overview Section */}
           <div className="mb-8">
-            <h1 className="textColor text-2xl font-semibold text-gray-900 mb-6">Overview</h1>
+            <h1 className="textColor text-2xl font-semibold mb-6">Overview</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="inputBackground border border-gray-200 rounded-lg p-6">
-                <h3 className="text-lg font-medium text-gray-900">Total Posts</h3>
+                <h3 className="text-lg font-medium text-gray-300">Total Posts</h3>
               </div>
               <div className="inputBackground border border-gray-200 rounded-lg p-6">
-                <h3 className="text-lg font-medium text-gray-900">Total Comments</h3>
+                <h3 className="text-lg font-medium text-gray-300">Total Comments</h3>
               </div>
               <div className="inputBackground border border-gray-200 rounded-lg p-6">
-                <h3 className="text-lg font-medium text-gray-900">Drafts</h3>
+                <h3 className="text-lg font-medium text-gray-300">Drafts</h3>
               </div>
               <div className="inputBackground border border-gray-200 rounded-lg p-6">
-                <h3 className="text-lg font-medium text-gray-900">Views</h3>
+                <h3 className="text-lg font-medium text-gray-300">Views</h3>
               </div>
             </div>
           </div>
 
           {/* Recent Posts Section */}
           <div className="mb-8">
-            <h2 className="textColor text-xl font-semibold mb-4">Recent Posts</h2>
+            <h2 className="textColor text-2xl font-semibold mb-4">Recent Posts</h2>
             <div className="inputBackground border border-gray-200 rounded-lg overflow-hidden">
               <table className="w-full">
                 <thead>
                   <tr className="inputBackground border-b border-gray-200 bg-gray-50">
-                    <th className="text-left py-3 px-6 text-gray-900 font-medium">Title</th>
-                    <th className="text-left py-3 px-6 text-gray-900 font-medium">Status</th>
-                    <th className="text-left py-3 px-6 text-gray-900 font-medium">Date</th>
-                    <th className="text-left py-3 px-6 text-gray-900 font-medium">Actions</th>
+                    <th className="text-left py-3 px-6 text-gray-300 font-medium">Title</th>
+                    <th className="text-left py-3 px-6 text-gray-300 font-medium">Status</th>
+                    <th className="text-left py-3 px-6 text-gray-300 font-medium">Date</th>
+                    <th className="text-left py-3 px-6 text-gray-300 font-medium">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -216,7 +216,7 @@ export default function Dashboard() {
 
           {/* Recent Comments Section */}
           <div className=''>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Recent Comments</h2>
+            <h2 className="textColor text-2xl font-semibold text-gray-900 mb-4">Recent Comments</h2>
             <div className="inputBackground border border-gray-200 rounded-lg p-6">
               <div className="space-y-4">
                 <div className="space-y-2">

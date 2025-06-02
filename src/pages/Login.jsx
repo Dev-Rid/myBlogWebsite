@@ -53,7 +53,7 @@
 
 
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 
 export default function LoginForm() {
@@ -61,6 +61,12 @@ export default function LoginForm() {
     email: '',
     password: ''
   });
+
+  const [isAnimated, setIsAnimated] = useState(false)
+
+  useEffect(() => {
+    setIsAnimated(true)
+  }, [])
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -97,12 +103,12 @@ export default function LoginForm() {
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl font-bold text-gray-300 text-center mb-8">
+        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-500 text-3xl font-bold text-gray-300 text-center mb-8">
           Welcome Back
         </h1>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className={`space-y-4 ${isAnimated ? "scale-100 opacity-100" : "scale-50 opacity-0" }`}>
           {/* Email Input */}
           <div>
             <input
