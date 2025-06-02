@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // Simple icon components (you can replace with your preferred icon library)
 const SearchIcon = () => (
@@ -62,13 +63,15 @@ export default function Dashboard() {
           </div>
 
           <nav className="space-y-2">
-            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Logo</div>
-            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Create New Post</div>
-            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Manage Posts</div>
-            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Categories</div>
-            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Comments</div>
-            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Analytics</div>
-            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">Settings</div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded"> <Link to="/logo">Logo</Link></div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded">
+              <Link to="/create">Create New Post</Link>
+            </div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded"> <Link to="/lmerlimger">Manage Posts</Link></div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded"><Link to="/lmerlimgersdf">Categories</Link></div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded"><Link to="/lmerlimgerdfg">Comments</Link></div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded"><Link to="/lmerlimgerfgg">Analytics</Link></div>
+            <div className="text-gray-300 py-2 px-3 text-lg cursor-pointer hover:bg-gray-500 rounded"><Link to="/lmerlimgersfgg">Settings</Link></div>
           </nav>
         </div>
       </div>

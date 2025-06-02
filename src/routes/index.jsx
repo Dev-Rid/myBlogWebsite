@@ -9,6 +9,8 @@ import Homepage from "../pages/Home"
 import Home from "../pages"
 import NotFound from "../pages/NotFound"
 import PostDetails from "../pages/PostDetails"
+import CreatePostPage from "../pages/CreateBlog"
+import Logo from "../pages/Logo"
 
 const route = createBrowserRouter([
     {
@@ -38,6 +40,14 @@ const route = createBrowserRouter([
             {
                 path: "/postdetails",
                 element: <PostDetails/>
+            },
+            {
+                path: "/create",
+                element: <CreatePostPage/>
+            },
+            {
+                path: "/logo",
+                element: <Logo/>
             }
         ],
  
