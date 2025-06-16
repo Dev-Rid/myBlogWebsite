@@ -79,11 +79,48 @@ export default function SignUpForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const {fullName, email, password } = formData
+
     // Handle form submission logic here
-    console.log('Form submitted:', formData);
+    // console.log('Form submitted:', formData);
+
+    // console.log("submitted my sigup form")
+
+    try {
+        const response = await fetch("http://localhost:3005/api/auth/signup", {
+        method: "POST", 
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          fullName, //formData.fullName, 
+          email, //formData.email, 
+          password, //formData.password
+        })      
+      })
+
+      // console.log(response)
+      const data = await response.json()
+      if(!response.ok){
+        console.log(data.error)
+      } else {
+        console.log("user registered", data)
+      }
+      // console.log(data)
+
+    } catch (error) { 
+      console.log(error)
+
+    }    
+
   };
+
+  // const handleSignup = () => {
+  //   console.log("sign up please")
+  // }
 
   const handleLoginClick = () => {
     // Handle navigation to login page
@@ -168,11 +205,19 @@ export default function SignUpForm() {
             >
               Sign Up
             </Link> */}
-            <Link
-                to="/login"
+
+            {/* <Link
+                // onClick={handleSignup}
+                // to="/login"
                 className="block w-full text-center bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-2xl text-lg shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-purple-300"
             >Sign Up
-            </Link>
+            </Link> */}
+
+            <button
+              to="/login"
+              className="block w-full text-center bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-2xl text-lg shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-purple-300"
+            >Sign Up
+            </button>
 
             
           </div>
